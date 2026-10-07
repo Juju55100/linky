@@ -41,3 +41,19 @@ header{display:flex;justify-content:space-between;align-items:center;gap:12px;ma
 @keyframes lcHoloAura{50%{opacity:.65;transform:scale(.96)}}
 @keyframes lcHoloRise{0%{transform:translateY(0);opacity:0}20%{opacity:.85}75%{opacity:.65}100%{transform:translateY(-390px);opacity:0}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.holo-particles{display:none}}
+
+/* v1.2.0 — layered curved energy trails and exposed projection platform. */
+.reactor{min-height:470px}
+.meter{width:100%;max-width:275px;transform:translateY(-32px);z-index:3}
+.orbit{height:73%;top:7%}
+.holo-arc{inset:8% 2% 22%}
+.holo-floor,.wire{display:none}
+.energy-flows{position:absolute;bottom:0;left:0;width:100%;height:46%;overflow:visible;pointer-events:none;z-index:1}
+.energy-strand{mix-blend-mode:screen}
+.energy-pulse{animation:lcEnergyPulse var(--duration) linear infinite;animation-delay:var(--delay);filter:drop-shadow(0 0 3px #baffdc)}
+.energy-comet{filter:drop-shadow(0 0 3px #b5fff4)}
+.shell:not(.active) .energy-pulse,.shell:not(.active) .energy-comet{display:none}
+.shell:not(.active) .energy-flows{opacity:.3}
+@keyframes lcEnergyPulse{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@container(max-width:540px){.reactor{min-height:370px}.meter{width:103%;transform:translateY(-28px)}.energy-flows{height:43%}}
+@media(prefers-reduced-motion:reduce){.energy-pulse,.energy-comet{display:none}}
