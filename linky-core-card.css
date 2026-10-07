@@ -1,4 +1,4 @@
-/* Linky Core v1.0.0 — isolated styles; embedded in the JavaScript. */
+/* Linky Core v1.1.0 — isolated styles; embedded in the JavaScript. */
 :host{display:block;--lc-green:#c4f65b;--lc-cyan:#53e9e5;--lc-amber:#ffd38a;--lc-text:#eaf3ee;--lc-muted:#90aba8;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--lc-text)}
 *{box-sizing:border-box}ha-card{display:block;background:none;border:0;box-shadow:none}
 .shell{container-type:inline-size;position:relative;isolation:isolate;overflow:hidden;padding:26px;border:1px solid #35645d;border-radius:26px;background:radial-gradient(ellipse at 48% 40%,#113a343d,transparent 53%),linear-gradient(135deg,#09191e,#071319 64%,#0c1e21);color:var(--lc-text)}
@@ -12,3 +12,32 @@ header{display:flex;justify-content:space-between;align-items:center;gap:12px;ma
 @media(max-width:450px){.shell{padding:15px;border-radius:20px}}
 @keyframes aura{50%{opacity:.65}}@keyframes led{50%{opacity:.35}}@keyframes pulse{0%{top:0;opacity:0}20%{opacity:1}100%{top:100%;opacity:0}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.index > .chip{font-size:10px;letter-spacing:.5px}
+/* v1.1.0 — holographic illustration and independent animated layers. */
+.shell{border-color:#38ded88a;box-shadow:inset 0 0 30px #06b5b70b;background:radial-gradient(ellipse at 50% 40%,#093a3d99,transparent 55%),linear-gradient(140deg,#02171d,#03131b 60%,#061d23)}
+.main{grid-template-columns:minmax(0,1fr) minmax(0,1.45fr) minmax(0,1fr);gap:14px}
+.reactor{min-height:420px;overflow:hidden}
+.reactor::before{inset:4% -12%;background:radial-gradient(ellipse at 50% 49%,#96ff4738,transparent 56%),radial-gradient(ellipse at 50% 80%,#00e9de33,transparent 60%);animation:lcHoloAura 5s ease-in-out infinite}
+.meter{position:relative;width:122%;max-width:330px;flex-shrink:0;filter:drop-shadow(0 0 8px #41f5d333)}
+.meter svg{overflow:visible}
+.orbit{width:97%;height:79%;aspect-ratio:auto;border:1px solid #38e4d645;box-shadow:inset 0 0 25px #19bda015,0 0 22px #3adbc719}
+.orbit::after{inset:7%;border:2px dashed #54e1c12e;animation:lcHoloRotate 44s linear infinite}
+.holo-arc{position:absolute;inset:10% 2%;border-radius:50%;border:2px solid transparent;border-left-color:#4ef6dc88;border-right-color:#b0f84765;transform:rotate(16deg);filter:drop-shadow(0 0 3px #49ffe655);pointer-events:none}
+.holo-floor{position:absolute;bottom:6%;left:5%;width:90%;height:9%;border-radius:50%;border:2px solid #70ffe6aa;box-shadow:0 0 12px #00dfc766,inset 0 0 20px #1ec99d44;pointer-events:none}
+.holo-floor::after{content:"";position:absolute;inset:16% 13%;border:1px solid #beff7399;border-radius:50%}
+.holo-particles{position:absolute;inset:3% 0;pointer-events:none;z-index:2;mask-image:linear-gradient(transparent,#000 15%,#000 85%,transparent)}
+.holo-particles i{position:absolute;left:var(--x);bottom:-5%;width:var(--s);height:var(--s);border-radius:50%;background:#b5ff67;box-shadow:0 0 5px #98ff69,0 0 10px #2effae77;animation:lcHoloRise var(--d) linear infinite;animation-delay:var(--delay);opacity:0}
+.holo-particles i:nth-child(even){background:#46ffed;box-shadow:0 0 7px #24e9ff}
+.holo-axis{position:absolute;top:1%;bottom:4%;left:50%;width:1px;background:linear-gradient(transparent,#65ffe055,transparent 28%,transparent 70%,#78ff8f66,transparent);pointer-events:none}
+.shell:not(.active) .holo-particles i{animation-play-state:paused;opacity:0}
+.partial .reactor{--holo-health:.7}
+.reactor{opacity:var(--holo-health,1)}
+.index{background:radial-gradient(ellipse at 85% 100%,#0a7b7340,transparent 70%),#09232b77;box-shadow:inset 0 0 20px #35d1a908;border-color:#3bd9cc66}
+.index.hp{border-color:#91b87466;background:radial-gradient(ellipse at 85% 100%,#52701730,transparent 70%),#10242b77}
+.value.accent{color:#65fff1}.cost .value{text-shadow:0 0 14px #bbff441c}
+@container(max-width:540px){.main{gap:7px}.reactor{min-height:320px}.meter{width:122%}.holo-floor{bottom:10%}.holo-particles i{box-shadow:0 0 4px #6affaf}}
+@keyframes lcHoloRotate{to{transform:rotate(360deg)}}
+@keyframes lcHoloAura{50%{opacity:.65;transform:scale(.96)}}
+@keyframes lcHoloRise{0%{transform:translateY(0);opacity:0}20%{opacity:.85}75%{opacity:.65}100%{transform:translateY(-390px);opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.holo-particles{display:none}}
