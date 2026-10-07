@@ -1,0 +1,14 @@
+type: custom:linky-core-card
+title: LINKY CORE
+apparent_power: sensor.linky_puissance_apparente
+current: sensor.linky_intensite_instantanee
+subscribed_current: sensor.linky_intensite_souscrite
+period: sensor.linky_periode_tarifaire
+schedule: sensor.linky_horaire_hp_hc
+option: sensor.linky_option_tarifaire
+index_hc: sensor.linky_index_hc
+index_hp: sensor.linky_index_hp
+cost_hc_day: sensor.cout_hc_journalier_linky
+cost_hp_day: sensor.cout_hp_journalier_linky
+cost_hc_month: sensor.cout_hc_mensuel_linky
+cost_hp_month: sensor.cout_hp_mensuel_linky

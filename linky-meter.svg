@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 350" role="img" aria-label="Illustration du compteur Linky">
+<defs>
+ <linearGradient id="__ID__body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d5ed83"/><stop offset=".4" stop-color="#abc962"/><stop offset="1" stop-color="#6b973f"/></linearGradient>
+ <linearGradient id="__ID__top" x2="0" y2="1"><stop stop-color="#e5f3af"/><stop offset="1" stop-color="#9bbc58"/></linearGradient>
+ <linearGradient id="__ID__lcd" x2="0" y2="1"><stop stop-color="#091d22"/><stop offset="1" stop-color="#1d3937"/></linearGradient>
+</defs>
+<path d="M46 22 Q120 7 194 22 L207 39 L211 287 Q208 319 191 324 L48 324 Q30 314 29 289 L33 39Z" fill="#263f36" stroke="#b5d48e" stroke-opacity=".5"/>
+<path d="M44 19 Q120 5 196 19 L205 42 L203 278 Q202 304 188 309 H52 Q37 304 36 278 L35 42Z" fill="url(#__ID__body)" stroke="#daeea7" stroke-width="1.5"/>
+<path d="M44 19 Q120 5 196 19 L205 42 L35 42Z" fill="url(#__ID__top)"/>
+<path d="M41 231 Q120 218 199 231 L202 278 Q199 303 188 309 H52 Q39 302 38 278Z" fill="#83a64b" stroke="#647e3b" stroke-width="1"/>
+<path d="M47 244 Q120 235 193 244" stroke="#d2e899" stroke-opacity=".45" fill="none"/>
+<text x="120" y="66" fill="#334c2c" font-size="23" font-weight="700" text-anchor="middle" font-family="Arial,sans-serif">Linky</text>
+<circle class="led" cx="120" cy="83" r="3" fill="#dbed91"/>
+<rect x="49" y="96" width="142" height="86" rx="9" fill="#516b42"/>
+<rect x="54" y="101" width="132" height="76" rx="5" fill="url(#__ID__lcd)" stroke="#e9fac466"/>
+<text x="120" y="119" fill="#8db2a0" font-size="7" letter-spacing="1" text-anchor="middle" font-family="Arial,sans-serif">PUISSANCE APPARENTE</text>
+<text data-field="meterPower" x="120" y="150" fill="#d9ffae" font-size="27" font-weight="700" text-anchor="middle" font-family="monospace">—</text>
+<text data-field="meterPeriod" x="120" y="165" fill="#a5c7ad" font-size="8" text-anchor="middle" font-family="Arial,sans-serif">PÉRIODE —</text>
+<circle cx="91" cy="204" r="12" fill="#385134" stroke="#dcf09d" stroke-opacity=".5"/><circle cx="149" cy="204" r="12" fill="#385134" stroke="#dcf09d" stroke-opacity=".5"/>
+<path d="M86 204h10 M144 204h10 M149 199v10" stroke="#ccec8b" stroke-width="2" stroke-linecap="round"/>
+<rect x="82" y="250" width="76" height="23" rx="3" fill="#bfd18b" fill-opacity=".55"/>
+<path d="M91 255v12m3-12v12m5-12v12m2-12v12m5-12v12m4-12v12m2-12v12m5-12v12m3-12v12m5-12v12m4-12v12m2-12v12m5-12v12m4-12v12" stroke="#44593b"/>
+<circle cx="120" cy="291" r="6" fill="#587d3a" stroke="#c2da91"/><path d="M117 291h6" stroke="#cfdfa1"/>
+<path d="M48 48v176" stroke="#f0ffd1" stroke-width="2" stroke-opacity=".27"/>
+</svg>

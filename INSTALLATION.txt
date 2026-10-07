@@ -1,0 +1,47 @@
+LINKY CORE — v1.0.0
+
+INSTALLATION LOCALE
+1. Avec File Editor, crée le dossier /config/www/linky-core/.
+   Selon l’installation, la racine de configuration peut s’appeler /homeassistant/.
+2. Place linky-core-card.js dans ce dossier.
+   Le JavaScript contient déjà le dessin du compteur et tous les styles.
+   Aucun module complémentaire ni connexion Internet n’est nécessaire au rendu.
+3. Dans Paramètres > Tableaux de bord > menu ⋮ > Ressources, ajoute :
+   URL : /local/linky-core/linky-core-card.js?v=1.0.0
+   Type : Module JavaScript
+   Si Ressources est absent, active le mode avancé dans ton profil Home Assistant.
+4. Recharge la page, ajoute une carte Manuelle et colle configuration.yaml.
+   Tous les identifiants sont ceux fournis pour ton installation.
+5. L’éditeur visuel permet ensuite de modifier le titre et les 12 capteurs.
+
+La carte Battery Core est indépendante et n’est pas modifiée.
+Pour une carte confortable sur ordinateur, privilégie une largeur de 650–900 px.
+Les trois colonnes restent côte à côte sur les cartes étroites ; les textes se réduisent.
+
+CONTENU
+- linky-core-card.js : fichier à installer, autonome.
+- linky-core-card.css : source des styles, déjà intégrée au JS, ne pas ajouter comme ressource.
+- linky-meter.svg : illustration vectorielle originale, déjà intégrée au JS.
+- configuration.yaml : configuration prête à coller avec tes capteurs.
+
+AFFICHAGE ET UNITÉS
+- Puissance apparente : VA (conversion automatique depuis kVA). Ce n’est pas une mesure en W.
+- Intensité : A, conversion depuis mA si nécessaire.
+- Indicateur : intensité instantanée / intensité souscrite ; ce n’est pas un seuil de sécurité électrique.
+- Index : kWh, 3 décimales ; les capteurs Wh et MWh sont convertis.
+- Coûts : euros, 2 décimales. Les totaux additionnent les deux capteurs HP et HC du même intervalle.
+  Aucun tarif, abonnement ou taxe n’est ajouté. Ce n’est pas une estimation de facture.
+- Un total reste absent si un de ses deux capteurs manque.
+- Capteur manquant, état indisponible ou unité incompatible : « — », jamais un faux zéro.
+- En l’absence d’unité fournie par le capteur, l’unité attendue par le champ est utilisée.
+- Le code Horaire HP/HC « A » est conservé tel quel.
+- Le badge HP/HC suit le capteur Période tarifaire, pas l’option du contrat.
+- Les animations décoratives s’activent lorsque la puissance apparente est positive.
+  Elles ne reproduisent pas la fréquence métrologique du voyant physique.
+- « Mesures reçues » signifie que les 12 états attendus sont disponibles, sans garantie de fraîcheur.
+
+VALIDATION
+Tests de logique avec états simulés : conversions, états absents, zéro,
+totaux HP/HC, changements de période, modification des capteurs et isolation.
+Le rendu dans une vraie instance Home Assistant reste à confirmer.
+L’aperçu PNG fourni séparément est une maquette avec les valeurs de ta capture.
